@@ -1,7 +1,9 @@
 import express from "express";
+const cors = require('cors');
 
 const app = express();
 const PORT = 3666;
+app.use(cors());
 
 const test_students = [
   {
