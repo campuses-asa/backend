@@ -5,7 +5,7 @@ const app = express();
 const PORT = 3666;
 app.use(cors());
 
-const test_students = [
+let test_students = [
   {
     id: 1,
     firstName: "Sarah",
@@ -67,8 +67,43 @@ app.get("/", (_req, res) => {
   res.send('Hello express');
 });
 
+// GET all students
 app.get("/students", (_req, res) => {
   res.json(test_students);
+});
+
+// GET student by id
+app.get("/students/:id", (req, res) => {
+  const id = Number(req.params.id);
+  const student = test_students.find((student) => student.id === id);
+  if (!student) {
+    res.status(404).json({ error: "Student not found" });
+    return;
+  }
+  res.json(student);
+});
+
+// DELETE student by id
+app.delete("/students/:id", (req, res) => {
+  const id = Number(req.params.id);
+  const original_student_count = test_students.length;
+  test_students = test_students.filter((student) => student.id !== id);
+  if (test_students.length === original_student_count) {
+    return res.status(404).json({ error: "Student not found" });
+  }
+  res.status(204).end(); // successful delete
+});
+
+// PUT - Edit student profile by id
+app.put("/students/:id/edit", (req, res) => {
+  const id = Number(req.params.id);
+  const student = test_students.find((student) => student.id === id);
+  if (!student) {
+    return res.status(404).json({ error: "Student not found" });
+  }
+  //"merge" the new body fields directly into the found student object
+  Object.assign(student, req.body);
+  res.json(student);
 });
 
 app.listen(PORT, () => { // 'npm run dev' in terminal to start dev server
