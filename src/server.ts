@@ -62,7 +62,7 @@ let test_students = [
   }
 ];
 
-const test_campuses = [
+let test_campuses = [
   {
     id: 1,
     name: "Brooklyn College",
@@ -179,6 +179,35 @@ app.get("/campuses/:id", (req, res) => {
     return;
   }
   res.json(campus);
+});
+
+// PUT - Edit campus by id
+app.put("/campuses/:id/edit", (req, res) => {
+  const id = Number(req.params.id);
+  const campus_idx = test_campuses.findIndex((campus) => campus.id === id);
+  if (campus_idx === -1) {
+    return res.status(404).json({ error: "Campus not found" });
+  }
+  const updatedCampus = {
+    id,
+    name: req.body.name,
+    address: req.body.address,
+    imageUrl: req.body.imageUrl, // set to undefined if not provided
+    description: req.body.description
+  };
+  test_campuses[campus_idx] = updatedCampus;
+  res.json(updatedCampus);
+});
+
+// DELETE student by id
+app.delete("/campuses/:id", (req, res) => {
+  const id = Number(req.params.id);
+  const original_campus_count = test_campuses.length;
+  test_campuses = test_campuses.filter((campus) => campus.id !== id);
+  if (test_campuses.length === original_campus_count) {
+    return res.status(404).json({ error: "Campus not found" });
+  }
+  res.status(204).end(); // successful delete
 });
 
 app.listen(PORT, () => { // 'npm run dev' in terminal to start dev server
