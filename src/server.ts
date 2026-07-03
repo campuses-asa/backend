@@ -33,5 +33,5 @@ app.use(errorHandler);
 
 // Start server
 app.listen(PORT, HOST, () => { // 'npm run dev' in terminal to start dev server
-  console.log(`Express server running on http://localhost:${PORT}`);
+  console.log(`Express server running on port ${PORT}`);
 });
