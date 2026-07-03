@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon --exec tsx src/server.ts",
+    "dev": "nodemon --exec tsx src/server.ts",
+    "build": "npx prisma generate && npx prisma migrate deploy",
+    "start": "tsx src/server.ts",
     "db:migrate": "prisma migrate dev",
     "db:reset": "prisma migrate reset --force",
     "db:studio": "prisma studio",
