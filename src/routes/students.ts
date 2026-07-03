@@ -32,9 +32,9 @@ router.post("/add",
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
-      imageUrl: req.body.imageUrl, // set to undefined if not provided
+      imageUrl: req.body.imageUrl ?? null,
       gpa: req.body.gpa,
-      campusId: req.body.campusId // set to undefined if not provided
+      campusId: req.body.campusId ?? null
     };
     const student = await prisma.student.create({ data: newStudent });
     res.status(201).json(student);
@@ -50,14 +50,13 @@ router.put("/:id/edit",
       res.status(404).json({ error: "Student not found" });
       return;
     }
-
     const updatedStudent = {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
-      imageUrl: req.body.imageUrl,
+      imageUrl: req.body.imageUrl  ?? null,
       gpa: req.body.gpa,
-      campusId: req.body.campusId // set to undefined if not provided
+      campusId: req.body.campusId ?? null
     };
     
     const student = await prisma.student.update({ where: {id: id }, data: updatedStudent });
