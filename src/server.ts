@@ -31,13 +31,6 @@ app.get("/", (_req, res) => {
 app.use(notFoundHandler);
 app.use(errorHandler);
 
-// debugging
-import { prisma } from './prisma-client';
-
-// Add this right before your app.listen() block
-prisma.$connect()
-  .then(() => console.log("Successfully connected to the database!"))
-  .catch((err) => console.error("DATABASE CONNECTION FAILED:", err));
 
 // Start server
 app.listen(PORT, HOST, () => { // 'npm run dev' in terminal to start dev server
