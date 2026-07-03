@@ -31,7 +31,7 @@ router.post("/add",
     const newCampus = {
       name: req.body.name,
       address: req.body.address,
-      imageUrl: req.body.imageUrl, // set to undefined if not provided
+      imageUrl: req.body.imageUrl ?? null,
       description: req.body.description,
     };
     const campus = await prisma.campus.create({ data: newCampus });
@@ -52,7 +52,7 @@ router.put("/:id/edit",
     const updatedCampus = {
       name: req.body.name,
       address: req.body.address,
-      imageUrl: req.body.imageUrl, // set to undefined if not provided
+      imageUrl: req.body.imageUrl ?? null,
       description: req.body.description
     };
     
