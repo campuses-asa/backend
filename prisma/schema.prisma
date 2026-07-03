@@ -13,6 +13,8 @@ model Student {
   email          String
   imageUrl       String?
   gpa            Decimal
+
+  campus         Campus?  @relation(fields: [campusId], references: [id], onDelete: SetNull)
   campusId       Int?
 }
 
@@ -22,4 +24,6 @@ model Campus {
   address        String
   imageUrl       String?
   description    String
+
+  students       Student[] // back-relation
 }
