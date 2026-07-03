@@ -6,7 +6,8 @@ import campusRouter from './routes/campuses';
 import { notFoundHandler, errorHandler } from './middleware';
 
 const app = express();
-const port = process.env.PORT || 3667;
+const HOST = '0.0.0.0'; // for render, need to explicity declare on app.listen() below
+const PORT = Number(process.env.PORT || 3667);
 
 app.use(
   cors({
@@ -31,6 +32,6 @@ app.use(notFoundHandler);
 app.use(errorHandler);
 
 // Start server
-app.listen(port, () => { // 'npm run dev' in terminal to start dev server
-  console.log(`Express server running on http://localhost:${port}`);
+app.listen(PORT, HOST, () => { // 'npm run dev' in terminal to start dev server
+  console.log(`Express server running on http://localhost:${PORT}`);
 });
