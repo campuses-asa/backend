@@ -61,6 +61,54 @@ async function main() {
         address: "2800 Victory Blvd, Staten Island, NY 10314",
         imageUrl: "https://images.unsplash.com/photo-1525921429555-e4e2c9b450ed?w=600&h=400&fit=crop",
         description: "Set on a massive 204-acre park-like campus, offering comprehensive undergraduate and graduate programs in a serene setting."
+      },
+      {
+        name: "New York University",
+        address: "70 Washington Square S, New York, NY 10012",
+        imageUrl: "https://images.unsplash.com/photo-1544161513-0179fe746fd5?w=600&h=400&fit=crop",
+        description: "An iconic, deeply integrated campus centered around Greenwich Village, known for its global reach and top-tier artistic and academic programs."
+      },
+      {
+        name: "Columbia University",
+        address: "116th St & Broadway, New York, NY 10027",
+        imageUrl: "https://images.unsplash.com/photo-1564951434112-64d74cc2a2d7?w=600&h=400&fit=crop",
+        description: "An Ivy League institution in Upper Manhattan featuring classical architecture, world-renowned research faculties, and deep historical roots."
+      },
+      {
+        name: "Fordham University",
+        address: "441 E Fordham Rd, Bronx, NY 10458",
+        imageUrl: "https://images.unsplash.com/photo-1583325946853-294a5e3ec457?w=600&h=400&fit=crop",
+        description: "A stunning Jesuit university campus in the Bronx featuring gothic-style buildings, expansive lawns, and strong traditions in law and humanities."
+      },
+      {
+        name: "Pratt Institute",
+        address: "200 Willoughby Ave, Brooklyn, NY 11205",
+        imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop",
+        description: "A specialized art, design, and architecture college in Clinton Hill, Brooklyn, featuring a unique sculpture-filled historic campus."
+      },
+      {
+        name: "University of California, Los Angeles",
+        address: "405 Hilgard Ave, Los Angeles, CA 90095",
+        imageUrl: "https://images.unsplash.com/photo-1595113340742-6f8c443b7404?w=600&h=400&fit=crop",
+        description: "A world-renowned public research university in Westwood, famous for its Romanesque Revival architecture, rigorous academics, and elite athletic programs."
+      },
+      {
+        name: "University of Southern California",
+        address: "3551 Trousdale Pkwy, Los Angeles, CA 90089",
+        imageUrl: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=600&h=400&fit=crop",
+        description: "A premier private research university located near downtown LA, featuring brick-and-limestone architecture and world-class cinematic arts and business programs."
+      },
+      {
+        name: "University of California, San Diego",
+        address: "9500 Gilman Dr, La Jolla, CA 92093",
+        imageUrl: "https://images.unsplash.com/photo-1567117623193-2798f828a2b5?w=600&h=400&fit=crop",
+        description: "Perched along the Pacific coast in La Jolla, UCSD is celebrated for its brutalist Geisel Library, cutting-edge oceanography, and STEM research dominance."
+      },
+      {
+        name: "San Diego State University",
+        address: "5500 Campanile Dr, San Diego, CA 92182",
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=400&fit=crop",
+        description: "A prominent public university noted for its striking Mission Revival style campus, high research activity, and dynamic student entrepreneurship programs."
       }
     ]
   });
@@ -74,14 +122,6 @@ async function main() {
         imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face",
         gpa: 3.85,
         campusId: 1,
-      },
-      {
-        firstName: "Alex",
-        lastName: "Rivera",
-        email: "alex.rivera@example.edu",
-        // imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-        gpa: 3.62,
-        campusId: 2,
       },
       {
         firstName: "Emily",
@@ -113,6 +153,71 @@ async function main() {
         email: "daniel.smith@example.edu",
         imageUrl: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=400&fit=crop&crop=face",
         gpa: 3.45,
+        campusId: 4,
+      },
+      {
+        firstName: "Elena",
+        lastName: "Rostova",
+        email: "elena.rostova@example.edu",
+        imageUrl: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=400&fit=crop&crop=face",
+        gpa: 3.91,
+        campusId: undefined,
+      },
+      {
+        firstName: "Tariq",
+        lastName: "Mahmood",
+        email: "tariq.mahmood@example.edu",
+        imageUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face",
+        gpa: 3.52,
+        campusId: 6,
+      },
+      {
+        firstName: "Maya",
+        lastName: "Lin",
+        email: "maya.lin@example.edu",
+        imageUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face",
+        gpa: 3.73,
+        campusId: 8,
+      },
+      {
+        firstName: "Jordan",
+        lastName: "Brooks",
+        email: "jordan.brooks@example.edu",
+        imageUrl: undefined,
+        gpa: 2.98,
+        campusId: 9,
+      },
+      {
+        firstName: "Sofia",
+        lastName: "Rodriguez",
+        email: "sofia.rodriguez@example.edu",
+        imageUrl: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=400&fit=crop&crop=face",
+        gpa: 3.67,
+        campusId: 12,
+      },
+      {
+        firstName: "Liam",
+        lastName: "O'Connor",
+        email: "liam.oconnor@example.edu",
+        imageUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face",
+        gpa: 3.40,
+        campusId: 13,
+      },
+      {
+        firstName: "Aisha",
+        lastName: "Diallo",
+        email: "aisha.diallo@example.edu",
+        imageUrl: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=400&fit=crop&crop=face",
+        gpa: 3.88,
+        campusId: 14,
+      },
+      {
+        firstName: "Lucas",
+        lastName: "Kim",
+        email: "lucas.kim@example.edu",
+        imageUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face",
+        gpa: 3.21,
+        campusId: 15,
       }
     ]
   });
